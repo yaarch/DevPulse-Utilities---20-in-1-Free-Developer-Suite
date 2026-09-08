@@ -34,6 +34,21 @@
         }, true);
       })();
     </script>
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('devpulse_theme');
+          var isDark = saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content="A comprehensive, 100% client-side suite of 20 essential developer and user utility tools with multi-language and RTL support, privacy-first execution, and Cloudflare Pages deployment readiness." />
     <meta name="keywords" content="JSON formatter, base64 encoder decoder, QR code generator, image compressor, regex tester, JWT decoder, diff checker, markdown editor, free developer tools, client side tools" />
     <meta name="author" content="DevPulse Suite" />

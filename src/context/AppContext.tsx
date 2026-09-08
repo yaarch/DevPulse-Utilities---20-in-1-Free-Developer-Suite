@@ -83,8 +83,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     const root = document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');
+      root.style.colorScheme = 'dark';
+      document.body.classList.add('dark');
     } else {
       root.classList.remove('dark');
+      root.style.colorScheme = 'light';
+      document.body.classList.remove('dark');
     }
     try {
       localStorage.setItem('devpulse_theme', theme);
