@@ -1,0 +1,6 @@
+{
+  "name": "DevPulse Utilities - 20-in-1 Free Developer Suite",
+  "description": "A comprehensive, 100% client-side suite of 20 essential developer and user utility tools with multi-language and RTL support, privacy-first execution, and Cloudflare Pages deployment readiness.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
