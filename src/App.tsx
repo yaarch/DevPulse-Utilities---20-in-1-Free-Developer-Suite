@@ -31,7 +31,7 @@ const MainApp: React.FC = () => {
       case 'tool':
         return <ToolView toolId={activePage.toolId} />;
 
-      case 'deploy':
+      case 'deploy-guide':
         return <CloudflareDeployGuide />;
 
       case 'about':

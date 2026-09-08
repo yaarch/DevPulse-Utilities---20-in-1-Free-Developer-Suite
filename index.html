@@ -4,6 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevPulse Utilities - 20-in-1 Free Developer Suite</title>
+    <!-- Prevent third-party browser extensions (e.g. MetaMask, Web3 injected scripts) from triggering unhandled errors -->
+    <script>
+      (function() {
+        var isExtensionError = function(msg) {
+          if (!msg) return false;
+          var s = String(msg).toLowerCase();
+          return s.indexOf('metamask') !== -1 ||
+                 s.indexOf('ethereum') !== -1 ||
+                 s.indexOf('failed to connect to metamask') !== -1 ||
+                 s.indexOf('evm') !== -1 ||
+                 s.indexOf('web3') !== -1;
+        };
+        window.addEventListener('unhandledrejection', function(event) {
+          var reason = (event && event.reason && (event.reason.message || event.reason.stack)) || String(event && event.reason);
+          if (isExtensionError(reason)) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+        window.addEventListener('error', function(event) {
+          var message = (event && event.message) || '';
+          if (isExtensionError(message)) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
     <meta name="description" content="A comprehensive, 100% client-side suite of 20 essential developer and user utility tools with multi-language and RTL support, privacy-first execution, and Cloudflare Pages deployment readiness." />
     <meta name="keywords" content="JSON formatter, base64 encoder decoder, QR code generator, image compressor, regex tester, JWT decoder, diff checker, markdown editor, free developer tools, client side tools" />
     <meta name="author" content="DevPulse Suite" />
