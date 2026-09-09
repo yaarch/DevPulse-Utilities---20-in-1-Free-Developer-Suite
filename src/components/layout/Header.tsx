@@ -10,7 +10,6 @@ import {
   Menu,
   X,
   Heart,
-  CloudUpload,
   Check
 } from 'lucide-react';
 
@@ -75,7 +74,7 @@ export const Header: React.FC = () => {
                 DevPulse
               </span>
               <span className="text-xs font-semibold px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950/70 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-800/50">
-                20-in-1
+                40-in-1
               </span>
             </div>
             <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium hidden sm:block">
@@ -132,22 +131,6 @@ export const Header: React.FC = () => {
             }`}
           >
             All Tools
-          </a>
-
-          <a
-            href="/deploy-guide/"
-            onClick={(e) => {
-              e.preventDefault();
-              navigateTo({ type: 'deploy-guide' });
-            }}
-            className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
-              activePage.type === 'deploy-guide'
-                ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50'
-                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-            }`}
-          >
-            <CloudUpload className="w-4 h-4 text-amber-500" />
-            <span>{t.navDeployGuide}</span>
           </a>
 
           <div className="h-4 w-px bg-slate-200 dark:bg-slate-800 mx-1" />
@@ -272,22 +255,7 @@ export const Header: React.FC = () => {
               }}
               className="w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
             >
-              All Tools (20)
-            </button>
-            <button
-              onClick={() => {
-                navigateTo({ type: 'deploy-guide' });
-                setIsMobileMenuOpen(false);
-              }}
-              className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
-            >
-              <span className="flex items-center gap-2">
-                <CloudUpload className="w-4 h-4 text-amber-500" />
-                {t.navDeployGuide}
-              </span>
-              <span className="text-xs px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200 font-medium">
-                Docs
-              </span>
+              All Tools
             </button>
             <button
               onClick={() => {

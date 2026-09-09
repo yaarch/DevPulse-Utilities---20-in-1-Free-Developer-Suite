@@ -444,6 +444,469 @@ export const TOOLS_LIST: ToolItem[] = [
         answer: 'Yes! Modern UI design achieves realistic depth by stacking multiple subtle shadows. You can add, adjust, and delete shadow layers seamlessly.'
       }
     ]
+  },
+  {
+    id: 'url-encoder-decoder',
+    slug: 'url-encoder-decoder',
+    name: 'URL Encoder / Decoder',
+    shortDesc: 'Safely encode and decode URI components, query parameters, and full URLs with RFC 3986 compliance.',
+    category: 'developer',
+    iconName: 'Globe',
+    tags: ['url', 'uri', 'encode', 'decode', 'querystring', 'percent-encoding', 'web'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Paste your URL, query string, or plain text into the input box.',
+      'Select Encode to percent-encode reserved characters, or Decode to restore raw text.',
+      'Toggle "Encode Full URI" or "Component Only" based on whether you need protocol/slashes preserved.',
+      'Copy the encoded or decoded output with a single click.'
+    ],
+    faqs: [
+      {
+        question: 'What is the difference between encodeURI and encodeURIComponent?',
+        answer: 'encodeURI preserves protocol and path delimiters (like ://, /, ?), whereas encodeURIComponent encodes every special character, which is required for query parameter values.'
+      },
+      {
+        question: 'Does this handle UTF-8 international characters?',
+        answer: 'Yes, all unicode characters are properly converted to multi-byte UTF-8 percent-encoded hex sequences.'
+      }
+    ]
+  },
+  {
+    id: 'css-gradient-generator',
+    slug: 'css-gradient-generator',
+    name: 'CSS Gradient Generator',
+    shortDesc: 'Visually design, tweak color stops, and export linear, radial, and conic CSS & Tailwind gradients.',
+    category: 'media',
+    iconName: 'Palette',
+    tags: ['css', 'gradient', 'linear', 'radial', 'tailwind', 'generator', 'design'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Choose gradient type: Linear, Radial, or Conic.',
+      'Click color stops to edit colors or drag to adjust positions.',
+      'Add or remove color stops with the + and delete buttons.',
+      'Rotate linear gradient angle from 0° to 360° using the circular dial or slider.',
+      'Copy standard CSS gradient rule or Tailwind CSS arbitrary classes.'
+    ],
+    faqs: [
+      {
+        question: 'Does this generator support Tailwind CSS?',
+        answer: 'Yes! You can copy either vanilla CSS code or arbitrary Tailwind background gradient classes directly.'
+      }
+    ]
+  },
+  {
+    id: 'lorem-ipsum-generator',
+    slug: 'lorem-ipsum-generator',
+    name: 'Lorem Ipsum Generator',
+    shortDesc: 'Generate customizable dummy placeholder text by paragraphs, sentences, or words with HTML export.',
+    category: 'text',
+    iconName: 'FileText',
+    tags: ['lorem', 'ipsum', 'placeholder', 'dummy-text', 'copywriting', 'generator'],
+    isNew: true,
+    instructions: [
+      'Select whether to generate Paragraphs, Sentences, or Words.',
+      'Set the desired count and toggle whether to start with classic "Lorem ipsum dolor sit amet...".',
+      'Choose export format: Plain Text, HTML (<p> tags), or Markdown.',
+      'Click "Copy" to paste directly into your layout design or prototype.'
+    ],
+    faqs: [
+      {
+        question: 'Where does the original Lorem Ipsum come from?',
+        answer: 'It originates from sections 1.10.32 and 1.10.33 of Cicero\'s "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil), written in 45 BC.'
+      }
+    ]
+  },
+  {
+    id: 'glassmorphism-generator',
+    slug: 'glassmorphism-generator',
+    name: 'Glassmorphism CSS Generator',
+    shortDesc: 'Create trendy frosted glass blur effects with customizable transparency, borders, and backdrop filters.',
+    category: 'media',
+    iconName: 'Sparkles',
+    tags: ['glassmorphism', 'frosted-glass', 'backdrop-filter', 'css', 'tailwind', 'blur'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Adjust the Blur slider to set backdrop-filter intensity.',
+      'Tweak Opacity and Background Color to control glass tint.',
+      'Customize border width, border opacity, and corner radius.',
+      'Preview with different backgrounds to inspect contrast.',
+      'Copy pure CSS with vendor prefixes or Tailwind classes.'
+    ],
+    faqs: [
+      {
+        question: 'Which browsers support backdrop-filter?',
+        answer: 'All modern browsers including Chrome, Edge, Safari, Firefox, and iOS/Android web views support backdrop-filter natively.'
+      }
+    ]
+  },
+  {
+    id: 'html-entity-converter',
+    slug: 'html-entity-converter',
+    name: 'HTML Entity Encoder / Decoder',
+    shortDesc: 'Encode special characters to HTML named and numeric entities to prevent XSS and rendering bugs.',
+    category: 'developer',
+    iconName: 'Code',
+    tags: ['html', 'entities', 'encode', 'decode', 'special-characters', 'xss', 'escape'],
+    isNew: true,
+    instructions: [
+      'Paste text or HTML code into the input area.',
+      'Select "Encode" to replace symbols (<, >, &, \', ") with entities like &lt; and &gt;.',
+      'Select "Decode" to convert HTML entities back to raw characters.',
+      'Browse the quick-reference cheat sheet for common symbols.'
+    ],
+    faqs: [
+      {
+        question: 'Why should I escape HTML characters?',
+        answer: 'Escaping HTML prevents cross-site scripting (XSS) attacks and ensures special characters render correctly on web pages instead of being interpreted as HTML tags.'
+      }
+    ]
+  },
+  {
+    id: 'css-flexbox-generator',
+    slug: 'css-flexbox-generator',
+    name: 'CSS Flexbox Playground & Generator',
+    shortDesc: 'Interactive visual flexbox builder with flex-direction, alignment, justify-content, wrap, and gap controls.',
+    category: 'developer',
+    iconName: 'LayoutGrid',
+    tags: ['flexbox', 'css', 'layout', 'alignment', 'justify-content', 'tailwind', 'interactive'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Toggle flex-direction (row, column, reverse) and wrap modes.',
+      'Select justify-content and align-items options to observe item alignment.',
+      'Adjust gap between elements with the slider.',
+      'Click any box to inspect and tweak individual flex-grow and align-self properties.',
+      'Copy the compiled CSS rule or Tailwind classes.'
+    ],
+    faqs: [
+      {
+        question: 'Can I test flexbox on mobile viewports?',
+        answer: 'Yes, the playground adapts smoothly to smaller containers and lets you experiment with wrapping and direction changes.'
+      }
+    ]
+  },
+  {
+    id: 'json-to-csv',
+    slug: 'json-to-csv',
+    name: 'JSON to CSV / CSV to JSON Converter',
+    shortDesc: 'Bi-directional tabular data converter with delimiter configuration, data preview, and download options.',
+    category: 'converter',
+    iconName: 'Table',
+    tags: ['json', 'csv', 'excel', 'spreadsheet', 'data-converter', 'export', 'table'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Choose conversion mode: JSON to CSV or CSV to JSON.',
+      'Paste your array of JSON objects or CSV rows.',
+      'Select delimiter (Comma, Semicolon, or Tab).',
+      'Inspect the tabular preview with row count.',
+      'Download as .csv or .json file, or copy output to clipboard.'
+    ],
+    faqs: [
+      {
+        question: 'How are nested objects handled in CSV conversion?',
+        answer: 'Nested objects and arrays are safely serialized as JSON strings within quoted CSV cells to preserve data fidelity.'
+      }
+    ]
+  },
+  {
+    id: 'cron-parser',
+    slug: 'cron-parser',
+    name: 'Cron Expression Parser & Schedule Explainer',
+    shortDesc: 'Translate 5-part cron syntax into plain English, inspect upcoming execution times, and use common presets.',
+    category: 'developer',
+    iconName: 'Clock',
+    tags: ['cron', 'crontab', 'schedule', 'parser', 'timer', 'automation', 'devops'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Type or paste any standard 5-part cron expression (* * * * *).',
+      'Read the real-time plain English schedule description.',
+      'Inspect breakdown of minute, hour, day-of-month, month, and day-of-week fields.',
+      'Click on any preset template (every 5 minutes, daily at midnight, weekdays) to test.',
+      'View simulated upcoming execution times.'
+    ],
+    faqs: [
+      {
+        question: 'What is the order of fields in standard crontab?',
+        answer: 'Standard Unix cron uses: 1) Minute (0-59), 2) Hour (0-23), 3) Day of Month (1-31), 4) Month (1-12), 5) Day of Week (0-6, where 0 is Sunday).'
+      }
+    ]
+  },
+  {
+    id: 'text-duplicate-remover',
+    slug: 'text-duplicate-remover',
+    name: 'Text Line Deduplicator & Sorter',
+    shortDesc: 'Strip duplicate lines from lists, sort alphabetically or by length, and trim unwanted whitespace.',
+    category: 'text',
+    iconName: 'FileMinus',
+    tags: ['deduplicate', 'remove-duplicates', 'lines', 'sort', 'clean', 'filter', 'text'],
+    isNew: true,
+    instructions: [
+      'Paste your multiline list of items, URLs, emails, or tags.',
+      'Toggle case sensitivity, whitespace trimming, and empty line stripping.',
+      'Select sorting order: None, A-Z, Z-A, or by line length.',
+      'Check compression metrics (original lines, unique lines, duplicates removed).',
+      'Copy cleaned unique list.'
+    ],
+    faqs: [
+      {
+        question: 'Does this handle large datasets?',
+        answer: 'Yes! Using JavaScript Set and Map operations, it can process tens of thousands of lines in milliseconds.'
+      }
+    ]
+  },
+  {
+    id: 'clip-path-generator',
+    slug: 'clip-path-generator',
+    name: 'CSS Clip-Path Shape Generator',
+    shortDesc: 'Create modern geometric shapes and masks with polygon(), circle(), and ellipse() CSS clip-paths.',
+    category: 'media',
+    iconName: 'Shapes',
+    tags: ['clip-path', 'css', 'polygon', 'shapes', 'svg', 'tailwind', 'mask'],
+    isNew: true,
+    instructions: [
+      'Select from 14+ geometric presets (Triangle, Hexagon, Star, Diamond, Bubble).',
+      'Switch aspect ratio (1:1, 16:9, 4:3) to preview responsiveness.',
+      'Inspect the generated CSS clip-path rule with vendor prefixes.',
+      'Copy pure CSS or Tailwind arbitrary bracket syntax.'
+    ],
+    faqs: [
+      {
+        question: 'How do clip-paths affect element click events?',
+        answer: 'Areas clipped outside the shape do not trigger hover or pointer events, making clip-path great for interactive clickable geometric buttons.'
+      }
+    ]
+  },
+  {
+    id: 'color-palette-generator',
+    slug: 'color-palette-generator',
+    name: 'Color Palette & Harmony Generator',
+    shortDesc: 'Generate triadic, complementary, analogous, and monochromatic color palettes with CSS variables.',
+    category: 'media',
+    iconName: 'Sliders',
+    tags: ['palette', 'color', 'harmony', 'triadic', 'complementary', 'css-variables', 'hex'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Pick a base color with the color picker or enter any hex code.',
+      'Choose a harmony rule: Triadic, Complementary, Analogous, Tetradic, or Monochromatic.',
+      'Click any swatch to copy its individual HEX color code.',
+      'Hit "Randomize Color" for instant inspiration.',
+      'Copy the ready-to-use CSS Custom Properties block.'
+    ],
+    faqs: [
+      {
+        question: 'What makes triadic palettes work well in UI design?',
+        answer: 'Triadic colors are spaced equally around the 360° color wheel (120° apart), offering vibrant contrast while preserving visual balance and legibility.'
+      }
+    ]
+  },
+  {
+    id: 'sql-formatter',
+    slug: 'sql-formatter',
+    name: 'SQL Formatter & Query Beautifier',
+    shortDesc: 'Beautify messy SQL queries with clause indentation, keyword capitalization, and one-click minification.',
+    category: 'developer',
+    iconName: 'FileCode2',
+    tags: ['sql', 'format', 'beautify', 'minify', 'database', 'query', 'postgres', 'mysql'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Paste your raw, unformatted SQL statement into the editor.',
+      'Toggle uppercase keywords (SELECT, FROM, WHERE, JOIN...).',
+      'Choose 2 or 4 space indentation for sub-clauses.',
+      'Optionally click "Minify Single-Line" for compact migration strings.',
+      'Copy formatted SQL.'
+    ],
+    faqs: [
+      {
+        question: 'Which SQL dialects are supported?',
+        answer: 'Standard ANSI SQL, PostgreSQL, MySQL, SQLite, Oracle, and MS SQL Server query constructs are beautified cleanly.'
+      }
+    ]
+  },
+  {
+    id: 'meta-tags-generator',
+    slug: 'meta-tags-generator',
+    name: 'Meta Tags & Open Graph Generator',
+    shortDesc: 'Create comprehensive SEO and social share card meta tags for Google, Facebook, Twitter, and LinkedIn.',
+    category: 'developer',
+    iconName: 'Share2',
+    tags: ['seo', 'meta-tags', 'open-graph', 'twitter-card', 'social-preview', 'html'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Fill in Title, Meta Description, Canonical URL, and Social Card Image URL.',
+      'Check real-time character counters for Google and social display limits.',
+      'Switch between Google Search, Facebook, and Twitter/X interactive previews.',
+      'Copy the complete HTML <head> meta tags snippet.'
+    ],
+    faqs: [
+      {
+        question: 'What is the optimal size for og:image?',
+        answer: '1200 × 630 pixels (1.91:1 aspect ratio) ensures sharp display across high-DPI retina devices on Facebook, Twitter, and LinkedIn.'
+      }
+    ]
+  },
+  {
+    id: 'text-ascii-styler',
+    slug: 'text-ascii-styler',
+    name: 'Fancy Unicode & ASCII Text Styler',
+    shortDesc: 'Convert regular text into mathematical bold, gothic, script, bubble, and inverted Unicode styles.',
+    category: 'text',
+    iconName: 'Type',
+    tags: ['ascii', 'unicode', 'fonts', 'bold', 'italic', 'bubble', 'social-media'],
+    isNew: true,
+    instructions: [
+      'Type or paste your text in the top input box.',
+      'Instantly see real-time conversions in Mathematical Bold, Italic, Fraktur, Monospace, Bubble, and Upside-Down.',
+      'Click "Copy" next to any style to paste into social media, GitHub READMEs, or chat messages.'
+    ],
+    faqs: [
+      {
+        question: 'Will these fonts work everywhere without installing anything?',
+        answer: 'Yes! They utilize standard Unicode mathematical and enclosed alphanumeric glyph blocks supported natively across all operating systems and browsers.'
+      }
+    ]
+  },
+  {
+    id: 'css-clamp-calculator',
+    slug: 'css-clamp-calculator',
+    name: 'CSS Clamp() & Fluid Typography Calculator',
+    shortDesc: 'Calculate perfectly fluid clamp(min, val, max) responsive font sizes and spacing without media queries.',
+    category: 'developer',
+    iconName: 'Scale',
+    tags: ['clamp', 'fluid-typography', 'responsive', 'vw', 'css', 'calculator', 'font-size'],
+    isNew: true,
+    instructions: [
+      'Set your minimum and maximum screen viewport widths (e.g. 360px to 1280px).',
+      'Set your minimum and maximum desired element or font sizes in pixels.',
+      'Drag the simulated screen width slider to see fluid typography scale in real time.',
+      'Copy the calculated CSS clamp() property or the standalone mathematical formula.'
+    ],
+    faqs: [
+      {
+        question: 'Why use CSS clamp() instead of media queries?',
+        answer: 'clamp() scales smoothly on every pixel of screen width between your limits, eliminating jarring font size jumps at breakpoint boundaries.'
+      }
+    ]
+  },
+  {
+    id: 'json-schema-generator',
+    slug: 'json-schema-generator',
+    name: 'JSON to JSON Schema Generator',
+    shortDesc: 'Automatically infer and generate valid Draft-07 JSON Schema definitions from raw sample JSON.',
+    category: 'developer',
+    iconName: 'Braces',
+    tags: ['json-schema', 'draft-07', 'schema', 'validation', 'api', 'types'],
+    isNew: true,
+    instructions: [
+      'Paste any sample JSON object or array payload.',
+      'Toggle whether all object properties should be marked as "required".',
+      'Automatic type detection handles numbers, integers, booleans, strings, email/date formats, arrays, and nested structures.',
+      'Download schema.json or copy to clipboard.'
+    ],
+    faqs: [
+      {
+        question: 'Which JSON Schema draft version is produced?',
+        answer: 'It conforms to Draft-07 schema specifications, compatible with OpenAPI, Ajv, and modern API validation frameworks.'
+      }
+    ]
+  },
+  {
+    id: 'border-radius-generator',
+    slug: 'border-radius-generator',
+    name: 'Fancy 8-Point Border Radius Generator',
+    shortDesc: 'Design organic blob shapes, asymmetric pill buttons, and modern fluid UI cards with 8-value border-radius.',
+    category: 'media',
+    iconName: 'Maximize2',
+    tags: ['border-radius', 'blob', 'organic-shapes', 'css', 'tailwind', 'design'],
+    isNew: true,
+    instructions: [
+      'Adjust horizontal and vertical radius sliders for all four corners.',
+      'Click "Randomize Organic Shape" for instant creative blob shapes.',
+      'Preview real-time gradients applied to the morphing container.',
+      'Copy pure CSS border-radius or Tailwind arbitrary rounded-[...] syntax.'
+    ],
+    faqs: [
+      {
+        question: 'How does the 8-value syntax work in CSS?',
+        answer: 'The slash (/) separates horizontal radii from vertical radii (top-left, top-right, bottom-right, bottom-left), allowing elliptical curvature.'
+      }
+    ]
+  },
+  {
+    id: 'js-minifier',
+    slug: 'js-minifier',
+    name: 'JavaScript Minifier & Stripper',
+    shortDesc: 'Minify raw JavaScript code, strip comments and console.log calls, and calculate bundle byte savings.',
+    category: 'developer',
+    iconName: 'Code2',
+    tags: ['javascript', 'minify', 'compress', 'strip-comments', 'optimize', 'bundle'],
+    isNew: true,
+    instructions: [
+      'Paste your JavaScript code into the source editor.',
+      'Toggle stripping of comments (/* */ and //) and console.log() statements.',
+      'Inspect before and after byte sizes and percentage saved.',
+      'Download as .min.js or copy minified code.'
+    ],
+    faqs: [
+      {
+        question: 'Is it safe to run in-browser?',
+        answer: 'Yes! Processing happens entirely in local memory with zero external requests, protecting proprietary script logic.'
+      }
+    ]
+  },
+  {
+    id: 'bcrypt-generator',
+    slug: 'bcrypt-generator',
+    name: 'Bcrypt Hash Generator & Verifier',
+    shortDesc: 'Generate secure cryptographically salted Bcrypt hashes and verify plaintext passwords against hashes.',
+    category: 'security',
+    iconName: 'KeyRound',
+    tags: ['bcrypt', 'hash', 'salt', 'security', 'password', 'verify', 'crypto'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Type your plaintext password into the generator.',
+      'Select cost factor rounds (8 through 14; 10 is industry standard).',
+      'Copy the resulting 60-character bcrypt hash starting with $2b$.',
+      'Use the verifier section below to test whether passwords match specific hashes.'
+    ],
+    faqs: [
+      {
+        question: 'What do the parts of a bcrypt hash mean?',
+        answer: '$2b$ indicates the modern bcrypt prefix, the next 2 digits are the log2 cost rounds (e.g. 10 = 1,024 iterations), followed by 22 salt characters and 31 hash characters.'
+      }
+    ]
+  },
+  {
+    id: 'favicon-generator',
+    slug: 'favicon-generator',
+    name: 'Favicon & App Icon Generator',
+    shortDesc: 'Generate multi-size favicons (16x16, 32x32, 180x180) from emojis or monogram letters with HTML tags.',
+    category: 'media',
+    iconName: 'Smile',
+    tags: ['favicon', 'icon', 'apple-touch-icon', 'emoji', 'png', 'branding'],
+    isPopular: true,
+    isNew: true,
+    instructions: [
+      'Choose between Emoji icon or Text Monogram (1-2 letters).',
+      'Customize background color, shape (rounded, circle, square), and text color.',
+      'Inspect real-world live previews at 128x128, 64x64, 32x32 browser tab, and 16x16.',
+      'Download 32x32 PNG, 16x16 PNG, or 180x180 Apple Touch Icon.',
+      'Copy HTML <link rel="icon"> tags for your site header.'
+    ],
+    faqs: [
+      {
+        question: 'Why are multiple favicon sizes needed?',
+        answer: 'Modern web platforms use 16×16 for bookmarks/browser tabs, 32×32 for high-DPI taskbars and retina displays, and 180×180 for iOS home screen bookmarks.'
+      }
+    ]
   }
 ];
 

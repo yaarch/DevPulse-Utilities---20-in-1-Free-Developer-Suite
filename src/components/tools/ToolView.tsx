@@ -21,6 +21,26 @@ import { CaseConverter } from './CaseConverter';
 import { WordCounter } from './WordCounter';
 import { SvgToPngConverter } from './SvgToPngConverter';
 import { BoxShadowGenerator } from './BoxShadowGenerator';
+import { UrlEncoderDecoder } from './UrlEncoderDecoder';
+import { CssGradientGenerator } from './CssGradientGenerator';
+import { LoremIpsumGenerator } from './LoremIpsumGenerator';
+import { GlassmorphismGenerator } from './GlassmorphismGenerator';
+import { HtmlEntityConverter } from './HtmlEntityConverter';
+import { CssFlexboxGenerator } from './CssFlexboxGenerator';
+import { JsonCsvConverter } from './JsonCsvConverter';
+import { CronParser } from './CronParser';
+import { TextDuplicateRemover } from './TextDuplicateRemover';
+import { ClipPathGenerator } from './ClipPathGenerator';
+import { ColorPaletteGenerator } from './ColorPaletteGenerator';
+import { SqlFormatter } from './SqlFormatter';
+import { MetaTagsGenerator } from './MetaTagsGenerator';
+import { TextAsciiStyler } from './TextAsciiStyler';
+import { CssClampCalculator } from './CssClampCalculator';
+import { JsonSchemaGenerator } from './JsonSchemaGenerator';
+import { BorderRadiusGenerator } from './BorderRadiusGenerator';
+import { JsMinifier } from './JsMinifier';
+import { BcryptGenerator } from './BcryptGenerator';
+import { FaviconGenerator } from './FaviconGenerator';
 
 interface ToolViewProps {
   toolId: string;
@@ -87,6 +107,47 @@ export const ToolView: React.FC<ToolViewProps> = ({ toolId }) => {
       case 'box-shadow-generator':
       case 'css-box-shadow-generator':
         return <BoxShadowGenerator />;
+      case 'url-encoder-decoder':
+        return <UrlEncoderDecoder />;
+      case 'css-gradient-generator':
+        return <CssGradientGenerator />;
+      case 'lorem-ipsum-generator':
+        return <LoremIpsumGenerator />;
+      case 'glassmorphism-generator':
+        return <GlassmorphismGenerator />;
+      case 'html-entity-converter':
+        return <HtmlEntityConverter />;
+      case 'css-flexbox-generator':
+        return <CssFlexboxGenerator />;
+      case 'json-to-csv':
+      case 'json-csv-converter':
+        return <JsonCsvConverter />;
+      case 'cron-parser':
+        return <CronParser />;
+      case 'text-duplicate-remover':
+        return <TextDuplicateRemover />;
+      case 'clip-path-generator':
+        return <ClipPathGenerator />;
+      case 'color-palette-generator':
+        return <ColorPaletteGenerator />;
+      case 'sql-formatter':
+        return <SqlFormatter />;
+      case 'meta-tags-generator':
+        return <MetaTagsGenerator />;
+      case 'text-ascii-styler':
+        return <TextAsciiStyler />;
+      case 'css-clamp-calculator':
+        return <CssClampCalculator />;
+      case 'json-schema-generator':
+        return <JsonSchemaGenerator />;
+      case 'border-radius-generator':
+        return <BorderRadiusGenerator />;
+      case 'js-minifier':
+        return <JsMinifier />;
+      case 'bcrypt-generator':
+        return <BcryptGenerator />;
+      case 'favicon-generator':
+        return <FaviconGenerator />;
       default:
         return (
           <div className="p-8 text-center text-sm text-slate-500">

@@ -25,7 +25,19 @@ import {
   Image,
   ShieldCheck,
   Repeat,
-  Wrench
+  Wrench,
+  Globe,
+  Sliders,
+  Table,
+  Share2,
+  Shapes,
+  Hash,
+  Layers,
+  Type,
+  Maximize2,
+  Code2,
+  Smile,
+  FileSpreadsheet
 } from 'lucide-react';
 
 interface IconRendererProps {
@@ -60,6 +72,18 @@ export const IconRenderer: React.FC<IconRendererProps> = ({ name, className = 'w
     case 'Image': return <Image className={className} />;
     case 'ShieldCheck': return <ShieldCheck className={className} />;
     case 'Repeat': return <Repeat className={className} />;
+    case 'Globe': return <Globe className={className} />;
+    case 'Sliders': return <Sliders className={className} />;
+    case 'Table': return <Table className={className} />;
+    case 'Share2': return <Share2 className={className} />;
+    case 'Shapes': return <Shapes className={className} />;
+    case 'Hash': return <Hash className={className} />;
+    case 'Layers': return <Layers className={className} />;
+    case 'Type': return <Type className={className} />;
+    case 'Maximize2': return <Maximize2 className={className} />;
+    case 'Code2': return <Code2 className={className} />;
+    case 'Smile': return <Smile className={className} />;
+    case 'FileSpreadsheet': return <FileSpreadsheet className={className} />;
     default: return <Wrench className={className} />;
   }
 };
