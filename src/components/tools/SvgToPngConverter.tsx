@@ -27,27 +27,56 @@ export const SvgToPngConverter: React.FC = () => {
     if (!svgCode.trim()) return;
 
     try {
-      const blob = new Blob([svgCode], { type: 'image/svg+xml;charset=utf-8' });
+      // Ensure the SVG string is clean and safe for processing
+      let processedSvg = svgCode;
+
+      // Fallback check: If width or height is missing, try to extract them from viewBox
+      if (!processedSvg.includes('width=') || !processedSvg.includes('height=')) {
+        const viewBoxMatch = processedSvg.match(/viewBox=["']([\d.-]+)\s+([\d.-]+)\s+([\d.-]+)\s+([\d.-]+)["']/i);
+        if (viewBoxMatch) {
+          const [, , , vbWidth, vbHeight] = viewBoxMatch;
+          processedSvg = processedSvg.replace(
+            /<svg/i,
+            `<svg width="${vbWidth}" height="${vbHeight}"`
+          );
+        }
+      }
+
+      const blob = new Blob([processedSvg], { type: 'image/svg+xml;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const img = new Image();
 
       img.onload = () => {
         const canvas = canvasRef.current;
-        if (!canvas) return;
+        if (!canvas) {
+          URL.revokeObjectURL(url);
+          return;
+        }
 
-        const w = (img.width || 300) * scale;
-        const h = (img.height || 300) * scale;
+        // Fallback dimensions if image natural dimensions are 0
+        const naturalW = img.width || img.naturalWidth || 300;
+        const naturalH = img.height || img.naturalHeight || 300;
+
+        const w = naturalW * scale;
+        const h = naturalH * scale;
+
         canvas.width = w;
         canvas.height = h;
 
         const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+        if (!ctx) {
+          URL.revokeObjectURL(url);
+          return;
+        }
 
         ctx.clearRect(0, 0, w, h);
+        
+        // Handle background color
         if (!isTransparent) {
           ctx.fillStyle = '#ffffff';
           ctx.fillRect(0, 0, w, h);
         }
+
         ctx.drawImage(img, 0, 0, w, h);
 
         const pngUrl = canvas.toDataURL('image/png');
@@ -57,12 +86,14 @@ export const SvgToPngConverter: React.FC = () => {
 
       img.onerror = () => {
         URL.revokeObjectURL(url);
+        setPreviewUrl(null);
         addToast('Invalid SVG syntax!', 'Unable to parse vector data.', 'error');
       };
 
       img.src = url;
-    } catch {
-      addToast('Error parsing SVG', '', 'error');
+    } catch (err: any) {
+      setPreviewUrl(null);
+      addToast('Error parsing SVG', err?.message || '', 'error');
     }
   };
 
@@ -171,7 +202,7 @@ export const SvgToPngConverter: React.FC = () => {
                 className="max-h-64 max-w-full rounded-xl shadow-md"
               />
             ) : (
-              <span className="text-xs text-slate-400">Rendering preview...</span>
+              <span className="text-xs text-slate-400">Rendering preview or fixing syntax...</span>
             )}
           </div>
         </div>
