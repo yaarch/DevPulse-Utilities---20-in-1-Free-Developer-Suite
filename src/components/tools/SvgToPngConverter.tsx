@@ -21,13 +21,14 @@ export const SvgToPngConverter: React.FC = () => {
   const [scale, setScale] = useState<number>(2);
   const [isTransparent, setIsTransparent] = useState<boolean>(true);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const renderSvgToPng = () => {
     if (!svgCode.trim()) return;
 
     try {
-      // Ensure the SVG string is clean and safe for processing
       let processedSvg = svgCode;
 
       // Fallback check: If width or height is missing, try to extract them from viewBox
@@ -53,7 +54,6 @@ export const SvgToPngConverter: React.FC = () => {
           return;
         }
 
-        // Fallback dimensions if image natural dimensions are 0
         const naturalW = img.width || img.naturalWidth || 300;
         const naturalH = img.height || img.naturalHeight || 300;
 
@@ -71,7 +71,6 @@ export const SvgToPngConverter: React.FC = () => {
 
         ctx.clearRect(0, 0, w, h);
         
-        // Handle background color
         if (!isTransparent) {
           ctx.fillStyle = '#ffffff';
           ctx.fillRect(0, 0, w, h);
@@ -104,12 +103,22 @@ export const SvgToPngConverter: React.FC = () => {
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
     const reader = new FileReader();
-    reader.onload = () => {
-      setSvgCode(reader.result as string);
-      addToast('Loaded SVG file!', file.name, 'success');
+    reader.onload = (event) => {
+      const content = event.target?.result as string;
+      if (content) {
+        setSvgCode(content);
+        addToast('Loaded SVG file successfully!', file.name, 'success');
+      }
+    };
+    reader.onerror = () => {
+      addToast('Failed to read file', 'Please try pasting the code manually.', 'error');
     };
     reader.readAsText(file);
+    
+    // Reset input so the same file can be uploaded again if needed
+    e.target.value = '';
   };
 
   const handleDownload = () => {
@@ -157,16 +166,28 @@ export const SvgToPngConverter: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <label className="cursor-pointer px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 flex items-center gap-1.5">
+          {/* File Upload Button triggered safely via useRef */}
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            className="cursor-pointer px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center gap-1.5 transition-colors"
+          >
             <UploadCloud className="w-3.5 h-3.5 text-indigo-500" />
             <span>Upload .svg</span>
-            <input type="file" accept=".svg,image/svg+xml" onChange={handleFileUpload} className="hidden" />
-          </label>
+          </button>
+          
+          <input 
+            ref={fileInputRef}
+            type="file" 
+            accept=".svg,image/svg+xml,text/xml,text/plain" 
+            onChange={handleFileUpload} 
+            className="hidden" 
+          />
 
           <button
             onClick={handleDownload}
             disabled={!previewUrl}
-            className="flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs disabled:opacity-40"
+            className="flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs disabled:opacity-40 transition-opacity"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Export PNG</span>
@@ -202,7 +223,7 @@ export const SvgToPngConverter: React.FC = () => {
                 className="max-h-64 max-w-full rounded-xl shadow-md"
               />
             ) : (
-              <span className="text-xs text-slate-400">Rendering preview or fixing syntax...</span>
+              <span className="text-xs text-slate-400">Rendering preview...</span>
             )}
           </div>
         </div>
