@@ -43,6 +43,7 @@ export const QrCodeGenerator: React.FC = () => {
   const [errorLevel, setErrorLevel] = useState<'L' | 'M' | 'Q' | 'H'>('M');
   const [margin, setMargin] = useState<number>(2);
   const [size, setSize] = useState<number>(320);
+  const [renderError, setRenderError] = useState<string | null>(null);
 
   // Generate payload string based on type
   const getPayload = (): string => {
@@ -69,7 +70,7 @@ export const QrCodeGenerator: React.FC = () => {
     }
   };
 
-  // Render QR code to canvas
+  // Render QR code to canvas with error handling
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -89,7 +90,10 @@ export const QrCodeGenerator: React.FC = () => {
       },
       err => {
         if (err) {
-          console.error('QR code generation error:', err);
+          console.warn('QR code generation warning:', err);
+          setRenderError('Data payload is too large for the selected error correction level. Try using Level L or reducing text length.');
+        } else {
+          setRenderError(null);
         }
       }
     );
@@ -394,9 +398,15 @@ export const QrCodeGenerator: React.FC = () => {
       {/* Right Column: Live QR Preview & Actions */}
       <div className="lg:col-span-5 flex flex-col items-center justify-center p-6 sm:p-8 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-center">
         {/* Canvas Display */}
-        <div className="p-3 bg-white rounded-2xl shadow-md border border-slate-200/80 mb-6">
+        <div className="p-3 bg-white rounded-2xl shadow-md border border-slate-200/80 mb-4">
           <canvas ref={canvasRef} className="max-w-full h-auto rounded-lg" />
         </div>
+
+        {renderError && (
+          <div className="p-3 mb-4 rounded-xl bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 text-xs leading-relaxed">
+            {renderError}
+          </div>
+        )}
 
         <div className="text-xs text-slate-500 dark:text-slate-400 mb-6 max-w-xs">
           Live real-time client preview. Scannable by any mobile camera or QR reader.

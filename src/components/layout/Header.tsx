@@ -57,8 +57,12 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 z-40 w-full border-b border-slate-200 dark:border-slate-800/80 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         {/* Logo & Brand */}
-        <button
-          onClick={() => navigateTo({ type: 'home' })}
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            navigateTo({ type: 'home' });
+          }}
           className="flex items-center gap-2.5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg p-1"
           aria-label="DevPulse Home"
         >
@@ -78,7 +82,7 @@ export const Header: React.FC = () => {
               100% Client-Side Free Tools
             </p>
           </div>
-        </button>
+        </a>
 
         {/* Center Search Bar Trigger (Desktop) */}
         <div className="hidden md:flex flex-1 max-w-md mx-4">
@@ -100,8 +104,12 @@ export const Header: React.FC = () => {
         {/* Desktop Navigation Links & Actions */}
         <div className="hidden md:flex items-center gap-1.5">
           {/* Nav items */}
-          <button
-            onClick={() => navigateTo({ type: 'home' })}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo({ type: 'home' });
+            }}
             className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
               activePage.type === 'home'
                 ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50'
@@ -109,10 +117,29 @@ export const Header: React.FC = () => {
             }`}
           >
             {t.navHome}
-          </button>
+          </a>
 
-          <button
-            onClick={() => navigateTo({ type: 'deploy-guide' })}
+          <a
+            href="/tools/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo({ type: 'tools' });
+            }}
+            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
+              activePage.type === 'tools'
+                ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+            }`}
+          >
+            All Tools
+          </a>
+
+          <a
+            href="/deploy-guide/"
+            onClick={(e) => {
+              e.preventDefault();
+              navigateTo({ type: 'deploy-guide' });
+            }}
             className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
               activePage.type === 'deploy-guide'
                 ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/50'
@@ -121,7 +148,7 @@ export const Header: React.FC = () => {
           >
             <CloudUpload className="w-4 h-4 text-amber-500" />
             <span>{t.navDeployGuide}</span>
-          </button>
+          </a>
 
           <div className="h-4 w-px bg-slate-200 dark:bg-slate-800 mx-1" />
 
@@ -237,6 +264,15 @@ export const Header: React.FC = () => {
               className="w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
             >
               {t.navHome}
+            </button>
+            <button
+              onClick={() => {
+                navigateTo({ type: 'tools' });
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full text-left px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+            >
+              All Tools (20)
             </button>
             <button
               onClick={() => {

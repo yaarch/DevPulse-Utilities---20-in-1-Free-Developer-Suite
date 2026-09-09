@@ -458,5 +458,24 @@ export const TOOL_CATEGORIES = [
 
 export const TOOLS_MAP: Record<string, ToolItem> = TOOLS_LIST.reduce((acc, tool) => {
   acc[tool.id] = tool;
+  acc[tool.slug] = tool;
+  if (tool.id === 'url-shortener' || tool.slug === 'url-shortener') {
+    acc['url-cleaner'] = tool;
+    acc['url-shortener'] = tool;
+  }
+  if (tool.id === 'svg-to-png-converter' || tool.slug === 'svg-to-png-converter') {
+    acc['svg-to-png'] = tool;
+    acc['svg-to-png-converter'] = tool;
+  }
+  if (tool.id === 'box-shadow-generator' || tool.slug === 'box-shadow-generator') {
+    acc['css-box-shadow-generator'] = tool;
+    acc['box-shadow-generator'] = tool;
+  }
+  if (tool.id === 'base64-encoder-decoder') {
+    acc['base64-tool'] = tool;
+  }
+  if (tool.id === 'qr-code-generator') {
+    acc['qr-generator'] = tool;
+  }
   return acc;
 }, {} as Record<string, ToolItem>);

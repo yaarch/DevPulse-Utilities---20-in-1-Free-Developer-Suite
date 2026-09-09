@@ -31,9 +31,11 @@ export interface ToastMessage {
 
 export type ActivePage = 
   | { type: 'home' }
+  | { type: 'tools' }
   | { type: 'tool'; toolId: string }
   | { type: 'about' }
   | { type: 'privacy' }
   | { type: 'terms' }
   | { type: 'contact' }
-  | { type: 'deploy-guide' };
+  | { type: 'deploy-guide' }
+  | { type: 'not-found' };

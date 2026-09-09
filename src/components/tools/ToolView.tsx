@@ -41,11 +41,13 @@ export const ToolView: React.FC<ToolViewProps> = ({ toolId }) => {
   }
 
   const renderToolComponent = () => {
-    switch (toolId) {
+    switch (tool.id) {
       case 'json-formatter':
         return <JsonFormatter />;
+      case 'base64-encoder-decoder':
       case 'base64-tool':
         return <Base64Tool />;
+      case 'qr-code-generator':
       case 'qr-generator':
         return <QrCodeGenerator />;
       case 'image-compressor':
@@ -57,6 +59,7 @@ export const ToolView: React.FC<ToolViewProps> = ({ toolId }) => {
       case 'hash-generator':
         return <HashGenerator />;
       case 'url-shortener':
+      case 'url-cleaner':
         return <UrlShortener />;
       case 'color-converter':
         return <ColorConverter />;
@@ -79,8 +82,10 @@ export const ToolView: React.FC<ToolViewProps> = ({ toolId }) => {
       case 'word-counter':
         return <WordCounter />;
       case 'svg-to-png':
+      case 'svg-to-png-converter':
         return <SvgToPngConverter />;
       case 'box-shadow-generator':
+      case 'css-box-shadow-generator':
         return <BoxShadowGenerator />;
       default:
         return (

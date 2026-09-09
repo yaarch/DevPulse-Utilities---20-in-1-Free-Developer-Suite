@@ -43,16 +43,36 @@ export const Footer: React.FC = () => {
               {t.popularTools}
             </h4>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-              {popular.map(tool => (
-                <li key={tool.id}>
-                  <button
-                    onClick={() => navigateToTool(tool.id)}
-                    className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left"
-                  >
-                    {tool.name}
-                  </button>
-                </li>
-              ))}
+              {popular.map(tool => {
+                const slug = tool.slug || tool.id;
+                return (
+                  <li key={tool.id}>
+                    <a
+                      href={`/tools/${slug}/`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigateToTool(tool.id);
+                      }}
+                      className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left block"
+                      title={tool.name}
+                    >
+                      {tool.name}
+                    </a>
+                  </li>
+                );
+              })}
+              <li>
+                <a
+                  href="/tools/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo({ type: 'tools' });
+                  }}
+                  className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline block pt-1 text-xs"
+                >
+                  View All 20 Tools &rarr;
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -63,44 +83,64 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li>
-                <button
-                  onClick={() => navigateTo({ type: 'deploy-guide' })}
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left font-medium text-indigo-600 dark:text-indigo-400"
+                <a
+                  href="/deploy-guide/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo({ type: 'deploy-guide' });
+                  }}
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left font-medium text-indigo-600 dark:text-indigo-400 block"
                 >
                   {t.navDeployGuide}
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => navigateTo({ type: 'about' })}
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left"
+                <a
+                  href="/about/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo({ type: 'about' });
+                  }}
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left block"
                 >
                   {t.navAbout}
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => navigateTo({ type: 'privacy' })}
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left"
+                <a
+                  href="/privacy/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo({ type: 'privacy' });
+                  }}
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left block"
                 >
                   {t.navPrivacy}
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => navigateTo({ type: 'terms' })}
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left"
+                <a
+                  href="/terms/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo({ type: 'terms' });
+                  }}
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left block"
                 >
                   {t.navTerms}
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => navigateTo({ type: 'contact' })}
-                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left"
+                <a
+                  href="/contact/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigateTo({ type: 'contact' });
+                  }}
+                  className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors text-left block"
                 >
                   {t.navContact}
-                </button>
+                </a>
               </li>
             </ul>
           </div>

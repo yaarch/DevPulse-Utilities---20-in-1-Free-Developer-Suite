@@ -7,8 +7,11 @@ import { GlobalSearchModal } from './components/layout/GlobalSearchModal';
 import { Hero } from './components/home/Hero';
 import { ToolGrid } from './components/home/ToolGrid';
 import { ToolView } from './components/tools/ToolView';
+import { AllToolsPage } from './components/tools/AllToolsPage';
+import { NotFoundPage } from './components/static/NotFoundPage';
 import { CloudflareDeployGuide } from './components/deployment/CloudflareDeployGuide';
 import { StaticPages } from './components/static/StaticPages';
+import { SEOHead } from './components/seo/SEOHead';
 
 const MainApp: React.FC = () => {
   const { activePage } = useApp();
@@ -28,8 +31,14 @@ const MainApp: React.FC = () => {
           </>
         );
 
+      case 'tools':
+        return <AllToolsPage />;
+
       case 'tool':
         return <ToolView toolId={activePage.toolId} />;
+
+      case 'not-found':
+        return <NotFoundPage />;
 
       case 'deploy-guide':
         return <CloudflareDeployGuide />;
@@ -52,6 +61,7 @@ const MainApp: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-indigo-500 selection:text-white transition-colors duration-200">
+      <SEOHead />
       <Header />
       <main className="flex-1 w-full pb-16">
         {renderActiveView()}

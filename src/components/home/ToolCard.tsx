@@ -2,6 +2,7 @@ import React from 'react';
 import { ToolItem } from '../../types';
 import { useApp } from '../../context/AppContext';
 import { IconRenderer } from '../common/IconRenderer';
+import { getToolSeo } from '../../config/seoConfig';
 import { Heart, ArrowUpRight, Share2 } from 'lucide-react';
 
 interface ToolCardProps {
@@ -11,16 +12,21 @@ interface ToolCardProps {
 export const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
   const { navigateToTool, toggleFavorite, isFavorite, addToast, t } = useApp();
   const favorited = isFavorite(tool.id);
+  const seo = getToolSeo(tool.id);
+  const slug = seo?.slug || tool.slug || tool.id;
+  const toolUrl = `/tools/${slug}/`;
 
   const handleShare = (e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
-    const url = `${window.location.origin}${window.location.pathname}?tool=${tool.id}`;
+    const url = `${window.location.origin}${toolUrl}`;
     navigator.clipboard.writeText(url).then(() => {
       addToast(t.urlCopied, url, 'success');
     });
   };
 
   const handleToggleFav = (e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
     toggleFavorite(tool.id);
     addToast(
@@ -48,9 +54,13 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
   };
 
   return (
-    <div
-      onClick={() => navigateToTool(tool.id)}
-      className="group relative flex flex-col justify-between p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-indigo-500/80 dark:hover:border-indigo-500/80 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-200 cursor-pointer text-left"
+    <a
+      href={toolUrl}
+      onClick={(e) => {
+        e.preventDefault();
+        navigateToTool(tool.id);
+      }}
+      className="group relative flex flex-col justify-between p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-indigo-500/80 dark:hover:border-indigo-500/80 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-200 cursor-pointer text-left block"
     >
       <div>
         {/* Top Header Row: Icon + Category Badge + Actions */}
@@ -70,6 +80,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
 
             {/* Favorite button */}
             <button
+              type="button"
               onClick={handleToggleFav}
               className={`p-1.5 rounded-lg transition-colors ${
                 favorited
@@ -84,6 +95,7 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
 
             {/* Share button */}
             <button
+              type="button"
               onClick={handleShare}
               className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               title={t.copyUrl}
@@ -128,6 +140,6 @@ export const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
           <ArrowUpRight className="w-3.5 h-3.5" />
         </div>
       </div>
-    </div>
+    </a>
   );
 };
