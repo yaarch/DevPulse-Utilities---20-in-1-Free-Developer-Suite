@@ -41,6 +41,26 @@ import { BorderRadiusGenerator } from './BorderRadiusGenerator';
 import { JsMinifier } from './JsMinifier';
 import { BcryptGenerator } from './BcryptGenerator';
 import { FaviconGenerator } from './FaviconGenerator';
+import { GpaCalculator } from './GpaCalculator';
+import { CitationGenerator } from './CitationGenerator';
+import { RandomGroupGenerator } from './RandomGroupGenerator';
+import { PomodoroTimer } from './PomodoroTimer';
+import { ReadabilityAnalyzer } from './ReadabilityAnalyzer';
+import { FlashcardGenerator } from './FlashcardGenerator';
+import { PercentageCalculator } from './PercentageCalculator';
+import { RandomNumberGenerator } from './RandomNumberGenerator';
+import { DiscountCalculator } from './DiscountCalculator';
+import { BmiCalculator } from './BmiCalculator';
+import { AgeCalculator } from './AgeCalculator';
+import { DaysBetweenDates } from './DaysBetweenDates';
+import { StopwatchTimer } from './StopwatchTimer';
+import { ColorContrastChecker } from './ColorContrastChecker';
+import { AspectRatioCalculator } from './AspectRatioCalculator';
+import { SvgPlaceholderGenerator } from './SvgPlaceholderGenerator';
+import { TextRepeater } from './TextRepeater';
+import { WordScrambler } from './WordScrambler';
+import { MorseCodeTranslator } from './MorseCodeTranslator';
+import { TextToBinary } from './TextToBinary';
 
 interface ToolViewProps {
   toolId: string;
@@ -148,6 +168,46 @@ export const ToolView: React.FC<ToolViewProps> = ({ toolId }) => {
         return <BcryptGenerator />;
       case 'favicon-generator':
         return <FaviconGenerator />;
+      case 'gpa-calculator':
+        return <GpaCalculator />;
+      case 'citation-generator':
+        return <CitationGenerator />;
+      case 'random-group-generator':
+        return <RandomGroupGenerator />;
+      case 'pomodoro-timer':
+        return <PomodoroTimer />;
+      case 'readability-analyzer':
+        return <ReadabilityAnalyzer />;
+      case 'flashcard-generator':
+        return <FlashcardGenerator />;
+      case 'percentage-calculator':
+        return <PercentageCalculator />;
+      case 'random-number-generator':
+        return <RandomNumberGenerator />;
+      case 'discount-calculator':
+        return <DiscountCalculator />;
+      case 'bmi-calculator':
+        return <BmiCalculator />;
+      case 'age-calculator':
+        return <AgeCalculator />;
+      case 'days-between-dates':
+        return <DaysBetweenDates />;
+      case 'stopwatch-timer':
+        return <StopwatchTimer />;
+      case 'color-contrast-checker':
+        return <ColorContrastChecker />;
+      case 'aspect-ratio-calculator':
+        return <AspectRatioCalculator />;
+      case 'svg-placeholder-generator':
+        return <SvgPlaceholderGenerator />;
+      case 'text-repeater':
+        return <TextRepeater />;
+      case 'word-scrambler':
+        return <WordScrambler />;
+      case 'morse-code-translator':
+        return <MorseCodeTranslator />;
+      case 'text-to-binary':
+        return <TextToBinary />;
       default:
         return (
           <div className="p-8 text-center text-sm text-slate-500">

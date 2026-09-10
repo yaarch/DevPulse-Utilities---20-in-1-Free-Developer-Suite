@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Feature Micro-Badges */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mt-10 pt-8 border-t border-slate-200/80 dark:border-slate-800/80 text-left">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mt-10 pt-8 border-t border-slate-200/80 dark:border-slate-800/80 text-left rtl:text-right">
           <div className="flex items-center gap-2.5 p-2 rounded-xl">
             <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
               <Lock className="w-4 h-4" />

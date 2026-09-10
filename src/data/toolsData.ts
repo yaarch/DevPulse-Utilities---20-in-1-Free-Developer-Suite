@@ -59,7 +59,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'image-compressor',
     name: 'Image Compressor & Resizer',
     shortDesc: 'Compress JPEG, PNG, and WebP images locally using client-side HTML5 canvas.',
-    category: 'media',
+    category: 'designer',
     iconName: 'ImageDown',
     tags: ['image', 'compress', 'optimize', 'resize', 'jpeg', 'png', 'webp'],
     isPopular: true,
@@ -86,7 +86,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'qr-code-generator',
     name: 'QR Code Generator',
     shortDesc: 'Generate customizable, high-resolution QR codes for URLs, WiFi credentials, vCards, and text.',
-    category: 'media',
+    category: 'data',
     iconName: 'QrCode',
     tags: ['qr', 'qrcode', 'barcode', 'wifi', 'vcard', 'generator', 'svg'],
     isPopular: true,
@@ -112,7 +112,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'markdown-editor',
     name: 'Markdown Live Editor',
     shortDesc: 'Interactive split-pane Markdown editor with live preview, word statistics, and HTML/MD export.',
-    category: 'text',
+    category: 'developer',
     iconName: 'FileCode2',
     tags: ['markdown', 'editor', 'preview', 'readme', 'gfm', 'html', 'docs'],
     isPopular: true,
@@ -199,7 +199,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'color-converter',
     name: 'Color Converter & Contrast Checker',
     shortDesc: 'Convert between HEX, RGB, HSL, and CMYK with WCAG accessibility contrast ratio analyzer.',
-    category: 'converter',
+    category: 'designer',
     iconName: 'Palette',
     tags: ['color', 'hex', 'rgb', 'hsl', 'cmyk', 'contrast', 'wcag', 'css'],
     instructions: [
@@ -262,7 +262,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'unit-converter',
     name: 'Universal Unit Converter',
     shortDesc: 'Fast conversion between Length, Weight, Temperature, Area, Speed, Time, and Digital Storage.',
-    category: 'converter',
+    category: 'data',
     iconName: 'Scale',
     tags: ['unit', 'converter', 'metric', 'imperial', 'length', 'weight', 'temperature', 'storage'],
     instructions: [
@@ -283,7 +283,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'timestamp-converter',
     name: 'Unix Timestamp Converter',
     shortDesc: 'Convert Epoch timestamps (seconds/ms) to human-readable UTC/Local time and vice versa.',
-    category: 'converter',
+    category: 'developer',
     iconName: 'Clock',
     tags: ['timestamp', 'epoch', 'unix', 'time', 'date', 'utc', 'iso'],
     instructions: [
@@ -366,7 +366,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'case-converter',
     name: 'Text Case Converter',
     shortDesc: 'Convert text between camelCase, snake_case, kebab-case, UPPERCASE, Title Case, and PascalCase.',
-    category: 'text',
+    category: 'developer',
     iconName: 'CaseSensitive',
     tags: ['case', 'converter', 'camelcase', 'snake_case', 'kebab-case', 'uppercase', 'text'],
     instructions: [
@@ -386,7 +386,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'word-counter',
     name: 'Word & Character Counter',
     shortDesc: 'Real-time text analyzer for words, characters, sentences, reading time, and keyword density.',
-    category: 'text',
+    category: 'developer',
     iconName: 'FileText',
     tags: ['word', 'counter', 'character', 'reading-time', 'density', 'sentences', 'seo'],
     instructions: [
@@ -407,7 +407,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'svg-to-png-converter',
     name: 'SVG to PNG Converter',
     shortDesc: 'Convert scalable vector graphics (SVG) into crisp, high-resolution PNG images with custom scaling.',
-    category: 'media',
+    category: 'designer',
     iconName: 'FileImage',
     tags: ['svg', 'png', 'converter', 'vector', 'raster', 'image', 'export'],
     instructions: [
@@ -477,7 +477,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'css-gradient-generator',
     name: 'CSS Gradient Generator',
     shortDesc: 'Visually design, tweak color stops, and export linear, radial, and conic CSS & Tailwind gradients.',
-    category: 'media',
+    category: 'designer',
     iconName: 'Palette',
     tags: ['css', 'gradient', 'linear', 'radial', 'tailwind', 'generator', 'design'],
     isPopular: true,
@@ -501,7 +501,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'lorem-ipsum-generator',
     name: 'Lorem Ipsum Generator',
     shortDesc: 'Generate customizable dummy placeholder text by paragraphs, sentences, or words with HTML export.',
-    category: 'text',
+    category: 'designer',
     iconName: 'FileText',
     tags: ['lorem', 'ipsum', 'placeholder', 'dummy-text', 'copywriting', 'generator'],
     isNew: true,
@@ -523,7 +523,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'glassmorphism-generator',
     name: 'Glassmorphism CSS Generator',
     shortDesc: 'Create trendy frosted glass blur effects with customizable transparency, borders, and backdrop filters.',
-    category: 'media',
+    category: 'designer',
     iconName: 'Sparkles',
     tags: ['glassmorphism', 'frosted-glass', 'backdrop-filter', 'css', 'tailwind', 'blur'],
     isPopular: true,
@@ -593,7 +593,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'json-to-csv',
     name: 'JSON to CSV / CSV to JSON Converter',
     shortDesc: 'Bi-directional tabular data converter with delimiter configuration, data preview, and download options.',
-    category: 'converter',
+    category: 'data',
     iconName: 'Table',
     tags: ['json', 'csv', 'excel', 'spreadsheet', 'data-converter', 'export', 'table'],
     isPopular: true,
@@ -641,7 +641,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'text-duplicate-remover',
     name: 'Text Line Deduplicator & Sorter',
     shortDesc: 'Strip duplicate lines from lists, sort alphabetically or by length, and trim unwanted whitespace.',
-    category: 'text',
+    category: 'developer',
     iconName: 'FileMinus',
     tags: ['deduplicate', 'remove-duplicates', 'lines', 'sort', 'clean', 'filter', 'text'],
     isNew: true,
@@ -664,7 +664,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'clip-path-generator',
     name: 'CSS Clip-Path Shape Generator',
     shortDesc: 'Create modern geometric shapes and masks with polygon(), circle(), and ellipse() CSS clip-paths.',
-    category: 'media',
+    category: 'designer',
     iconName: 'Shapes',
     tags: ['clip-path', 'css', 'polygon', 'shapes', 'svg', 'tailwind', 'mask'],
     isNew: true,
@@ -686,7 +686,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'color-palette-generator',
     name: 'Color Palette & Harmony Generator',
     shortDesc: 'Generate triadic, complementary, analogous, and monochromatic color palettes with CSS variables.',
-    category: 'media',
+    category: 'designer',
     iconName: 'Sliders',
     tags: ['palette', 'color', 'harmony', 'triadic', 'complementary', 'css-variables', 'hex'],
     isPopular: true,
@@ -757,7 +757,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'text-ascii-styler',
     name: 'Fancy Unicode & ASCII Text Styler',
     shortDesc: 'Convert regular text into mathematical bold, gothic, script, bubble, and inverted Unicode styles.',
-    category: 'text',
+    category: 'designer',
     iconName: 'Type',
     tags: ['ascii', 'unicode', 'fonts', 'bold', 'italic', 'bubble', 'social-media'],
     isNew: true,
@@ -778,7 +778,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'css-clamp-calculator',
     name: 'CSS Clamp() & Fluid Typography Calculator',
     shortDesc: 'Calculate perfectly fluid clamp(min, val, max) responsive font sizes and spacing without media queries.',
-    category: 'developer',
+    category: 'designer',
     iconName: 'Scale',
     tags: ['clamp', 'fluid-typography', 'responsive', 'vw', 'css', 'calculator', 'font-size'],
     isNew: true,
@@ -800,7 +800,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'json-schema-generator',
     name: 'JSON to JSON Schema Generator',
     shortDesc: 'Automatically infer and generate valid Draft-07 JSON Schema definitions from raw sample JSON.',
-    category: 'developer',
+    category: 'data',
     iconName: 'Braces',
     tags: ['json-schema', 'draft-07', 'schema', 'validation', 'api', 'types'],
     isNew: true,
@@ -822,7 +822,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'border-radius-generator',
     name: 'Fancy 8-Point Border Radius Generator',
     shortDesc: 'Design organic blob shapes, asymmetric pill buttons, and modern fluid UI cards with 8-value border-radius.',
-    category: 'media',
+    category: 'designer',
     iconName: 'Maximize2',
     tags: ['border-radius', 'blob', 'organic-shapes', 'css', 'tailwind', 'design'],
     isNew: true,
@@ -889,7 +889,7 @@ export const TOOLS_LIST: ToolItem[] = [
     slug: 'favicon-generator',
     name: 'Favicon & App Icon Generator',
     shortDesc: 'Generate multi-size favicons (16x16, 32x32, 180x180) from emojis or monogram letters with HTML tags.',
-    category: 'media',
+    category: 'designer',
     iconName: 'Smile',
     tags: ['favicon', 'icon', 'apple-touch-icon', 'emoji', 'png', 'branding'],
     isPopular: true,
@@ -907,17 +907,437 @@ export const TOOLS_LIST: ToolItem[] = [
         answer: 'Modern web platforms use 16×16 for bookmarks/browser tabs, 32×32 for high-DPI taskbars and retina displays, and 180×180 for iOS home screen bookmarks.'
       }
     ]
-  }
+  },
+  {
+    id: 'gpa-calculator',
+    slug: 'gpa-calculator',
+    name: 'GPA Calculator',
+    shortDesc: 'Calculate your semester and cumulative GPA easily.',
+    category: 'education',
+    iconName: 'GraduationCap',
+    tags: ['gpa', 'calculator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'citation-generator',
+    slug: 'citation-generator',
+    name: 'Citation Generator',
+    shortDesc: 'Generate APA, MLA, and Chicago style citations.',
+    category: 'education',
+    iconName: 'Quote',
+    tags: ['citation', 'generator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'random-group-generator',
+    slug: 'random-group-generator',
+    name: 'Random Team Generator',
+    shortDesc: 'Randomly split a list of names into equal teams or groups.',
+    category: 'education',
+    iconName: 'Users',
+    tags: ['random', 'group', 'generator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'pomodoro-timer',
+    slug: 'pomodoro-timer',
+    name: 'Pomodoro Timer',
+    shortDesc: 'Boost productivity with a customizable Pomodoro focus timer.',
+    category: 'education',
+    iconName: 'Timer',
+    tags: ['pomodoro', 'timer'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'readability-analyzer',
+    slug: 'readability-analyzer',
+    name: 'Readability Analyzer',
+    shortDesc: 'Analyze text to determine reading level and estimated reading time.',
+    category: 'education',
+    iconName: 'BookOpen',
+    tags: ['readability', 'analyzer'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'flashcard-generator',
+    slug: 'flashcard-generator',
+    name: 'Flashcard Generator',
+    shortDesc: 'Create, shuffle, and review interactive study flashcards.',
+    category: 'education',
+    iconName: 'Layers',
+    tags: ['flashcard', 'generator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'percentage-calculator',
+    slug: 'percentage-calculator',
+    name: 'Percentage Calculator',
+    shortDesc: 'Quickly calculate percentages, discounts, and margins.',
+    category: 'education',
+    educationAudience: 'students',
+    iconName: 'Percent',
+    tags: ['percentage', 'calculator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'random-number-generator',
+    slug: 'random-number-generator',
+    name: 'Random Number Generator',
+    shortDesc: 'Generate secure random numbers within a custom range.',
+    category: 'data',
+    iconName: 'Dices',
+    tags: ['random', 'number', 'generator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'discount-calculator',
+    slug: 'discount-calculator',
+    name: 'Discount Calculator',
+    shortDesc: 'Calculate the final price after applying discount percentages.',
+    category: 'data',
+    iconName: 'Tag',
+    tags: ['discount', 'calculator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'bmi-calculator',
+    slug: 'bmi-calculator',
+    name: 'BMI Calculator',
+    shortDesc: 'Calculate your Body Mass Index (BMI) and health category.',
+    category: 'data',
+    iconName: 'Activity',
+    tags: ['bmi', 'calculator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'age-calculator',
+    slug: 'age-calculator',
+    name: 'Age Calculator',
+    shortDesc: 'Calculate precise age in years, months, and days.',
+    category: 'data',
+    iconName: 'CalendarDays',
+    tags: ['age', 'calculator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'days-between-dates',
+    slug: 'days-between-dates',
+    name: 'Days Between Dates',
+    shortDesc: 'Calculate the exact number of days between two dates.',
+    category: 'data',
+    iconName: 'Calendar',
+    tags: ['days', 'between', 'dates'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'stopwatch-timer',
+    slug: 'stopwatch-timer',
+    name: 'Stopwatch & Timer',
+    shortDesc: 'A simple, precise stopwatch and countdown timer.',
+    category: 'education',
+    educationAudience: 'both',
+    iconName: 'Clock',
+    tags: ['stopwatch', 'timer'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'color-contrast-checker',
+    slug: 'color-contrast-checker',
+    name: 'Color Contrast Checker',
+    shortDesc: 'Check color contrast ratios for WCAG accessibility compliance.',
+    category: 'designer',
+    iconName: 'Contrast',
+    tags: ['color', 'contrast', 'checker'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'aspect-ratio-calculator',
+    slug: 'aspect-ratio-calculator',
+    name: 'Aspect Ratio Calculator',
+    shortDesc: 'Calculate image and video aspect ratios and dimensions.',
+    category: 'designer',
+    iconName: 'MonitorPlay',
+    tags: ['aspect', 'ratio', 'calculator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'svg-placeholder-generator',
+    slug: 'svg-placeholder-generator',
+    name: 'SVG Placeholder Generator',
+    shortDesc: 'Generate customizable SVG placeholder images for your layouts.',
+    category: 'designer',
+    iconName: 'Image',
+    tags: ['svg', 'placeholder', 'generator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'text-repeater',
+    slug: 'text-repeater',
+    name: 'Text Repeater',
+    shortDesc: 'Repeat a text string multiple times with customizable separators.',
+    category: 'developer',
+    iconName: 'Repeat',
+    tags: ['text', 'repeater'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'word-scrambler',
+    slug: 'word-scrambler',
+    name: 'Word Scrambler',
+    shortDesc: 'Scramble the letters of words or sentences randomly.',
+    category: 'education',
+    educationAudience: 'both',
+    iconName: 'Shuffle',
+    tags: ['word', 'scrambler'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'morse-code-translator',
+    slug: 'morse-code-translator',
+    name: 'Morse Code Translator',
+    shortDesc: 'Translate text to Morse code and vice versa.',
+    category: 'data',
+    iconName: 'Radio',
+    tags: ['morse', 'code', 'translator'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
+  {
+    id: 'text-to-binary',
+    slug: 'text-to-binary',
+    name: 'Text to Binary Converter',
+    shortDesc: 'Convert plain text to binary code and binary back to text.',
+    category: 'developer',
+    iconName: 'Binary',
+    tags: ['text', 'to', 'binary'],
+    isPopular: false,
+    instructions: [
+      'Enter your data in the input fields.',
+      'Click the button to process.',
+      'View or copy the results.'
+    ],
+    faqs: [
+      {
+        question: 'Is this tool free to use?',
+        answer: 'Yes, all our tools are 100% free and run completely in your browser.'
+      }
+    ]
+  },
 ];
 
-export const TOOL_CATEGORIES = [
-  { id: 'all', labelKey: 'cat_all', icon: 'LayoutGrid' },
-  { id: 'developer', labelKey: 'cat_dev', icon: 'Code' },
-  { id: 'text', labelKey: 'cat_text', icon: 'FileText' },
-  { id: 'media', labelKey: 'cat_media', icon: 'Image' },
-  { id: 'security', labelKey: 'cat_security', icon: 'ShieldCheck' },
-  { id: 'converter', labelKey: 'cat_converter', icon: 'Repeat' }
-] as const;
+import { TOOL_CATEGORIES, ToolRegistry } from '../services/toolRegistry';
+
+ToolRegistry.setTools(TOOLS_LIST);
+
+export { TOOL_CATEGORIES, ToolRegistry };
 
 export const TOOLS_MAP: Record<string, ToolItem> = TOOLS_LIST.reduce((acc, tool) => {
   acc[tool.id] = tool;

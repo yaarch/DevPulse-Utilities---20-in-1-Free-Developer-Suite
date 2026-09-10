@@ -6,6 +6,9 @@ import { ToastContainer } from './components/layout/ToastContainer';
 import { GlobalSearchModal } from './components/layout/GlobalSearchModal';
 import { Hero } from './components/home/Hero';
 import { ToolGrid } from './components/home/ToolGrid';
+import { EducationPromo } from './components/home/EducationPromo';
+import { PopularTools } from './components/home/PopularTools';
+import { RecentTools } from './components/home/RecentTools';
 import { ToolView } from './components/tools/ToolView';
 import { AllToolsPage } from './components/tools/AllToolsPage';
 import { NotFoundPage } from './components/static/NotFoundPage';
@@ -27,7 +30,12 @@ const MainApp: React.FC = () => {
         return (
           <>
             <Hero />
-            <ToolGrid />
+            <RecentTools />
+            <PopularTools />
+            <div id="tool-grid">
+              <ToolGrid />
+            </div>
+            <EducationPromo />
           </>
         );
 
@@ -53,7 +61,12 @@ const MainApp: React.FC = () => {
         return (
           <>
             <Hero />
-            <ToolGrid />
+            <RecentTools />
+            <PopularTools />
+            <div id="tool-grid">
+              <ToolGrid />
+            </div>
+            <EducationPromo />
           </>
         );
     }

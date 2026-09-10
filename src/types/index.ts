@@ -1,19 +1,35 @@
 export type Language = 'en' | 'es' | 'fr' | 'ar' | 'de';
 
+export type PrimaryToolCategory = 
+  | 'developer'
+  | 'designer'
+  | 'security'
+  | 'data'
+  | 'education';
+
 export type ToolCategory = 
   | 'all'
-  | 'developer'
-  | 'text'
-  | 'media'
-  | 'security'
-  | 'converter';
+  | PrimaryToolCategory;
+
+export type EducationSubCategory = 'all' | 'teachers' | 'students';
+
+export type EducationAudience = 'teachers' | 'students' | 'both';
+
+export interface CategoryMetadata {
+  id: ToolCategory;
+  labelKey: string;
+  name: string;
+  icon: string;
+  description: string;
+}
 
 export interface ToolItem {
   id: string;
   slug: string;
   name: string;
   shortDesc: string;
-  category: ToolCategory;
+  category: PrimaryToolCategory;
+  educationAudience?: EducationAudience;
   iconName: string;
   tags: string[];
   isPopular?: boolean;

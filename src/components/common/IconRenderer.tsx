@@ -1,43 +1,13 @@
 import React from 'react';
 import {
-  Braces,
-  Binary,
-  ImageDown,
-  QrCode,
-  FileCode2,
-  KeyRound,
-  ShieldAlert,
-  Link2,
-  Palette,
-  SearchCode,
-  GitCompare,
-  Scale,
-  Clock,
-  FileMinus,
-  Fingerprint,
-  FileKey,
-  CaseSensitive,
-  FileText,
-  FileImage,
-  Sparkles,
-  LayoutGrid,
-  Code,
-  Image,
-  ShieldCheck,
-  Repeat,
-  Wrench,
-  Globe,
-  Sliders,
-  Table,
-  Share2,
-  Shapes,
-  Hash,
-  Layers,
-  Type,
-  Maximize2,
-  Code2,
-  Smile,
-  FileSpreadsheet
+  Braces, Binary, ImageDown, QrCode, FileCode2, KeyRound, ShieldAlert,
+  Link2, Palette, SearchCode, GitCompare, Scale, Clock, FileMinus,
+  Fingerprint, FileKey, CaseSensitive, FileText, FileImage, Sparkles,
+  LayoutGrid, Code, Image, ShieldCheck, Repeat, Wrench, Globe, Sliders,
+  Table, Share2, Shapes, Hash, Layers, Type, Maximize2, Code2, Smile,
+  FileSpreadsheet, GraduationCap, Quote, Users, Timer, BookOpen, Percent,
+  Dices, Tag, Activity, CalendarDays, Calendar, Contrast, MonitorPlay,
+  Shuffle, Radio
 } from 'lucide-react';
 
 interface IconRendererProps {
@@ -84,6 +54,21 @@ export const IconRenderer: React.FC<IconRendererProps> = ({ name, className = 'w
     case 'Code2': return <Code2 className={className} />;
     case 'Smile': return <Smile className={className} />;
     case 'FileSpreadsheet': return <FileSpreadsheet className={className} />;
+    case 'GraduationCap': return <GraduationCap className={className} />;
+    case 'Quote': return <Quote className={className} />;
+    case 'Users': return <Users className={className} />;
+    case 'Timer': return <Timer className={className} />;
+    case 'BookOpen': return <BookOpen className={className} />;
+    case 'Percent': return <Percent className={className} />;
+    case 'Dices': return <Dices className={className} />;
+    case 'Tag': return <Tag className={className} />;
+    case 'Activity': return <Activity className={className} />;
+    case 'CalendarDays': return <CalendarDays className={className} />;
+    case 'Calendar': return <Calendar className={className} />;
+    case 'Contrast': return <Contrast className={className} />;
+    case 'MonitorPlay': return <MonitorPlay className={className} />;
+    case 'Shuffle': return <Shuffle className={className} />;
+    case 'Radio': return <Radio className={className} />;
     default: return <Wrench className={className} />;
   }
 };

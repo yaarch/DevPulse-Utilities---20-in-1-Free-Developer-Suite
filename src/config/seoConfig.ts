@@ -17,7 +17,7 @@ export interface ToolSeoData {
   useCases: string[];
   privacyStatement: string;
   relatedToolIds: string[];
-  category: 'developer' | 'text' | 'media' | 'security' | 'converter';
+  category: string;
   categoryLabel: string;
   keywords: string[];
 }
@@ -26,18 +26,18 @@ export const SITE_URL = 'https://devpulsetools.pages.dev';
 export const SITE_NAME = 'DevPulse Tools';
 
 export const HOMEPAGE_SEO = {
-  title: 'Free Online Developer Tools – DevPulse Tools',
-  metaDescription: 'Discover 20 free, fast, privacy-first developer utilities. JSON formatter, Base64 encoder, QR generator, regex tester, image compressor and more running 100% in your browser.',
-  h1: 'Free Online Tools for Developers, Designers & Creators',
-  intro: 'A comprehensive suite of 20 modern utilities designed for fast workflows. Every tool runs client-side directly in your browser with zero tracking, zero server uploads, and instant response times.',
+  title: 'Free Online Tools for Developers, Designers, Teachers & Students – DevPulse',
+  metaDescription: 'Discover 60 free, fast, privacy-first utilities for developers, designers, teachers, and students. Formatter, encoder, CSS tools, classroom generators, study timers, and more running 100% in your browser.',
+  h1: 'Free Online Tools for Developers, Designers, Teachers & Students',
+  intro: 'A comprehensive suite of 60 modern utilities designed for fast workflows and academic productivity. Every tool runs client-side directly in your browser with zero tracking, zero server uploads, and instant response times.',
   canonical: `${SITE_URL}/`
 };
 
 export const ALL_TOOLS_SEO = {
-  title: 'All Developer Tools & Utilities – Free Online Suite | DevPulse Tools',
-  metaDescription: 'Browse the complete collection of 20 free developer, design, and content utilities. Categorized by development, text manipulation, media, cryptography, and conversions.',
-  h1: 'All Developer Tools & Utilities',
-  intro: 'Explore our full catalogue of 20 browser-based utility tools. Filter by category, search instantly, and process your data locally without sending bytes to external servers.',
+  title: 'All 60 Tools & Utilities – Free Online Suite | DevPulse Tools',
+  metaDescription: 'Browse the complete collection of 60 free utilities. Categorized into Developer, Designer, Security, Data, and Education with dedicated teacher and student tools.',
+  h1: 'All Developer, Designer & Education Utilities',
+  intro: 'Explore our full catalogue of 60 browser-based utility tools. Filter by formal category or student/teacher sub-category, search instantly, and process your data locally without sending bytes to external servers.',
   canonical: `${SITE_URL}/tools/`
 };
 
@@ -45,32 +45,27 @@ export const CATEGORIES_INFO = [
   {
     id: 'developer',
     name: 'Developer Tools',
-    description: 'Format, inspect, minify, and generate syntax, code, and web tokens without leaving your browser.'
+    description: 'Format, inspect, minify, test regex expressions, check diffs, and generate code syntax without leaving your browser.'
   },
   {
-    id: 'text',
-    name: 'Text Tools',
-    description: 'Analyze word counts, compare text diffs, format markdown, and convert case styles instantly.'
-  },
-  {
-    id: 'media',
-    name: 'Image & Media Tools',
-    description: 'Compress photos, generate high-resolution QR codes, and convert SVG vectors to PNG files.'
-  },
-  {
-    id: 'converters',
-    name: 'Converters',
-    description: 'Convert color systems, Unix timestamps, and measurement units with bidirectional calculations.'
+    id: 'designer',
+    name: 'Designer & UI Tools',
+    description: 'Design CSS box shadows, gradients, flexbox layouts, check color contrast, convert vectors, and generate palettes.'
   },
   {
     id: 'security',
     name: 'Security & Privacy Tools',
-    description: 'Generate cryptographic passwords, calculate hash digests, clean tracking URLs, and decode JWTs.'
+    description: 'Generate cryptographic passwords, calculate hash digests (MD5, SHA-256), decode JWT tokens, and verify bcrypt strings.'
   },
   {
-    id: 'css',
-    name: 'CSS & Web Tools',
-    description: 'Design multi-layered CSS box shadows, test contrast ratios, and copy ready-to-use stylesheet code.'
+    id: 'data',
+    name: 'Data & Database Tools',
+    description: 'Format JSON payloads, convert JSON to CSV, beautify SQL queries, generate JSON schemas, and encode Base64 or QR codes.'
+  },
+  {
+    id: 'education',
+    name: 'Education Suite (Teachers & Students)',
+    description: 'Academic tools including GPA calculator, citation generator, classroom group picker, Pomodoro timer, readability analyzer, and flashcard maker.'
   }
 ];
 

@@ -1,7 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { Language, ToolCategory, ActivePage, ToastMessage } from '../types';
+import { Language, ToolCategory, EducationSubCategory, ActivePage, ToastMessage } from '../types';
 import { TRANSLATIONS, TranslationDict } from '../i18n/translations';
 import { TOOLS_LIST } from '../data/toolsData';
+import { ToolRegistry, ToolRegistryService } from '../services/toolRegistry';
 
 interface AppContextType {
   language: Language;
@@ -15,6 +16,9 @@ interface AppContextType {
   navigateToTool: (toolId: string) => void;
   activeCategory: ToolCategory;
   setActiveCategory: (cat: ToolCategory) => void;
+  activeEducationSubCategory: EducationSubCategory;
+  setActiveEducationSubCategory: (sub: EducationSubCategory) => void;
+  toolRegistry: ToolRegistryService;
   searchQuery: string;
   setSearchQuery: (q: string) => void;
   isSearchOpen: boolean;
@@ -23,6 +27,8 @@ interface AppContextType {
   toggleFavorite: (toolId: string) => void;
   isFavorite: (toolId: string) => boolean;
   recentTools: string[];
+  setRecentTools: React.Dispatch<React.SetStateAction<string[]>>;
+  clearRecentTools: () => void;
   toasts: ToastMessage[];
   addToast: (title: string, description?: string, type?: 'success' | 'info' | 'warning' | 'error') => void;
   removeToast: (id: string) => void;
@@ -181,6 +187,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   });
 
+
   const toggleFavorite = (toolId: string) => {
     setFavorites(prev => {
       const next = prev.includes(toolId) ? prev.filter(id => id !== toolId) : [...prev, toolId];
@@ -208,8 +215,18 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     });
   }, [navigateTo]);
 
+  const clearRecentTools = useCallback(() => {
+    setRecentTools([]);
+    try {
+      localStorage.removeItem('devpulse_recents');
+    } catch {
+      // ignore
+    }
+  }, []);
+
   // 5. Search & Filters
   const [activeCategory, setActiveCategory] = useState<ToolCategory>('all');
+  const [activeEducationSubCategory, setActiveEducationSubCategory] = useState<EducationSubCategory>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -257,6 +274,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         navigateToTool,
         activeCategory,
         setActiveCategory,
+        activeEducationSubCategory,
+        setActiveEducationSubCategory,
+        toolRegistry: ToolRegistry,
         searchQuery,
         setSearchQuery,
         isSearchOpen,
@@ -265,6 +285,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         toggleFavorite,
         isFavorite,
         recentTools,
+        setRecentTools,
+        clearRecentTools,
         toasts,
         addToast,
         removeToast
